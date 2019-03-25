@@ -1,0 +1,37 @@
+<!-- <div>
+  <form [formGroup]="addForm">
+    <div>
+      <label>
+        Work:
+        <input type="text" formControlName="todo" />
+      </label>
+    </div>
+    <div>
+        <label>
+          Schedule Date:
+          <input type="date" formControlName="schedule" />
+        </label>
+    </div>
+    <button (click)="submitForm($event)">Add</button>
+  </form>  
+</div> -->
+<h4 mat-dialog-title>Add Todo</h4>
+<div mat-dialog-content>
+    <form [formGroup]="addForm">
+        <div>
+          <label>
+            Work:
+            <input type="text" formControlName="todo" />
+          </label>
+        </div>
+        <div>
+            <label>
+              Schedule Date:
+              <input type="date" formControlName="schedule" />
+            </label>
+        </div>
+      </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="addForm.value" cdkFocusInitial>Add</button>
+</div>
