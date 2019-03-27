@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { TodoType } from './todo-interface';
 
 @Component({
   selector: 'add-todo',
@@ -8,7 +9,7 @@ import { FormControl, FormBuilder, FormGroup, FormArray, Validators } from '@ang
 })
 export class AddTodoComponent implements OnInit {
   public addForm:FormGroup;
-  @Output() addEmitter:EventEmitter<any> = new EventEmitter();
+  @Output() addEmitter:EventEmitter<TodoType> = new EventEmitter();
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {

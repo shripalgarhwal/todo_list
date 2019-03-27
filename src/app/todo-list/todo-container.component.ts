@@ -1,12 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { AddTodoComponent } from './add-todo.component';
-
-export interface TodoType {
-    sno?: number,
-    todo: string,
-    schedule: any
-}
+import { TodoType } from './todo-interface';
 
 @Component({
   selector: 'todo-container',
@@ -26,8 +21,8 @@ export class TodoContainerComponent implements OnInit {
   ngOnInit() {
     
   }
-  public addTodo(event: any):void {
-    let obj: any = {...event, sno: (this.toDoList[this.toDoList.length - 1].sno + 1)}
+  public addTodo(event: TodoType):void {
+    let obj: TodoType = {...event, sno: (this.toDoList[this.toDoList.length - 1].sno + 1)}
     this.toDoList.push(obj);
   }
   openAddDialog(): void {
